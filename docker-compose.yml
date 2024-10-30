@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  spark-thrift-server:
+    build: .
+    ports:
+      - "10000:10000"
+    volumes:
+      - ./sparkwarehouse:/opt/sparkwarehouse
+      - ./data:/opt/data  # Mount the data directory
+      # - ./hivemetastore:/opt/hivemetastore 
+    container_name: spark-thrift-server
